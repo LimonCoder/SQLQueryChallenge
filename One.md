@@ -10,7 +10,7 @@ This project identifies employees who had **higher total sales in 2024** compare
 
 ---
 
-## 🧱 Database Schema
+## 🧱 Database Schema & Solution
 
 ```sql
 CREATE TABLE Employees (
@@ -47,7 +47,8 @@ INSERT INTO Sales (SaleID, EmployeeID, SaleDate, Amount) VALUES
 (10, 1, '2024-03-01', 180.00);
 
 
--- Solution :
+-- Solution
+
 with year_wise_employee_sales_data as (
 select EmployeeID, YEAR(SaleDate) as year, sum(Amount) as total_amount from Sales group by EmployeeID, YEAR(SaleDate)
 ),
